@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> aee73b50c5cfda18dda05444dab5d1e239fdc4d0
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
@@ -18,4 +21,8 @@ public class Auto extends LinearOpMode {
         sleep(500);
         bot.setDriveTrain(0, 0);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aee73b50c5cfda18dda05444dab5d1e239fdc4d0

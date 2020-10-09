@@ -26,4 +26,8 @@ public class Bot {
         leftMotor.setPower(left);
         rightMotor.setPower(right);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aee73b50c5cfda18dda05444dab5d1e239fdc4d0

@@ -14,4 +14,8 @@ public class TeleOp extends LinearOpMode {
             bot.setDriveTrain(-gamepad1.left_stick_y, -gamepad1.right_stick_y);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aee73b50c5cfda18dda05444dab5d1e239fdc4d0
