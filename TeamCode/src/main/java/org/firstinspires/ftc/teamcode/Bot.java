@@ -10,10 +10,14 @@ import org.firstinspires.ftc.robotcore.external.navigation.Position;
 
 public class Bot {
     private LinearOpMode opMode;
-    private DcMotor leftMotor;
-    private DcMotor rightMotor;
-    private Servo testServo1 = null;
-    private Servo testServo2 = null;
+    private DcMotor leftMotorFront;
+    private DcMotor rightMotorFront;
+    private DcMotor leftMotorBack;
+    private DcMotor rightMotorBack;
+    private DcMotor intakeRight;
+    private DcMotor intakeLeft;
+    private DcMotor lifterLeft;
+    private DcMotor lifterRight;
 
     public Bot(LinearOpMode opMode) {
         this.opMode = opMode;
@@ -21,23 +25,38 @@ public class Bot {
     }
 
     public void init(HardwareMap map) {
-        leftMotor = map.get(DcMotor.class, "left-motor");
-        rightMotor = map.get(DcMotor.class, "right-motor");
+        leftMotorFront = map.get(DcMotor.class, "left-motor-front");
+        rightMotorFront = map.get(DcMotor.class, "right-motor-front");
+        leftMotorBack = map.get(DcMotor.class, "left-motor-back");
+        rightMotorBack = map.get(DcMotor.class, "right-motor-back");
+        intakeLeft = map.get(DcMotor.class, "intake-left");
+        intakeRight = map.get(DcMotor.class, "intake-right");
+        lifterLeft = map.get(DcMotor.class, "lifter-left");
+        lifterRight = map.get(DcMotor.class, "lifterRight");
 
-        rightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        testServo1 = map.get(Servo.class, "testServo1");
-        testServo2 = map.get(Servo.class,"testServo2");
+
+        rightMotorFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightMotorBack.setDirection(DcMotorSimple.Direction.REVERSE);
+        lifterRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        lifterLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        intakeRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        intakeLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+
    }
 
     public void setDriveTrain(double left, double right) {
-        leftMotor.setPower(left);
-        rightMotor.setPower(right);
+        leftMotorFront.setPower(left);
+        rightMotorFront.setPower(right);
+        leftMotorBack.setPower(left);
+        rightMotorBack.setPower(right);
     }
-    public void setTestServo1(double position) {
-        testServo1.setPosition(position);
+    public void setIntake(double power) {
+        intakeRight.setPower(power);
+        intakeLeft.setPower(power);
     }
-    public void setTestServo2(double position) {
-        testServo2.setPosition(position);
+    public void setLifter(double power) {
+        lifterLeft.setPower(power);
+        lifterRight.setPower(power);
     }
 
 }
