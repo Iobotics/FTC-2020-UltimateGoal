@@ -10,8 +10,14 @@ import org.firstinspires.ftc.robotcore.external.navigation.Position;
 
 public class Bot {
     private LinearOpMode opMode;
-    private DcMotor motor1;
-    private DcMotor motor2;
+    private DcMotor leftMotorFront;
+    private DcMotor rightMotorFront;
+    private DcMotor leftMotorBack;
+    private DcMotor rightMotorBack;
+    private DcMotor intakeRight;
+    private DcMotor intakeLeft;
+    private DcMotor lifterLeft;
+    private DcMotor lifterRight;
 
     public Bot(LinearOpMode opMode) {
         this.opMode = opMode;
@@ -19,13 +25,38 @@ public class Bot {
     }
 
     public void init(HardwareMap map) {
-        motor1 = map.get(DcMotor.class, "motor1");
-        motor2 = map.get(DcMotor.class, "motor2");
-   }
+        leftMotorFront = map.get(DcMotor.class, "left-motor-front");
+        rightMotorFront = map.get(DcMotor.class, "right-motor-front");
+        leftMotorBack = map.get(DcMotor.class, "left-motor-back");
+        rightMotorBack = map.get(DcMotor.class, "right-motor-back");
+        intakeLeft = map.get(DcMotor.class, "intake-left");
+        intakeRight = map.get(DcMotor.class, "intake-right");
+        lifterLeft = map.get(DcMotor.class, "lifter-left");
+        lifterRight = map.get(DcMotor.class, "lifterRight");
+
+
+        rightMotorFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightMotorBack.setDirection(DcMotorSimple.Direction.REVERSE);
+        lifterRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        lifterLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        intakeRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        intakeLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+
+    }
 
     public void setDriveTrain(double left, double right) {
-        motor1.setPower(left);
-        motor2.setPower(right);
+        leftMotorFront.setPower(left);
+        rightMotorFront.setPower(right);
+        leftMotorBack.setPower(left);
+        rightMotorBack.setPower(right);
+    }
+    public void setIntake(double power) {
+        intakeRight.setPower(power);
+        intakeLeft.setPower(power);
+    }
+    public void setLifter(double power) {
+        lifterLeft.setPower(power);
+        lifterRight.setPower(power);
     }
 
 }
