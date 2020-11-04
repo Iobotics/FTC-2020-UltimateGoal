@@ -11,10 +11,11 @@ public class Auto extends LinearOpMode {
 
         waitForStart();
 
-        bot.setDriveTrain(1, 1);
-        sleep(1000);
-        bot.setDriveTrain(1, -1);
-        sleep(500);
+
+        bot.encoderDrive(0.5, 20, 20, 5);
+        bot.gyroTurn(90, 0.25);
+        //bot.setDriveTrain(1, -1);
+        //sleep(500);
         bot.setDriveTrain(0, 0);
     }
 }
