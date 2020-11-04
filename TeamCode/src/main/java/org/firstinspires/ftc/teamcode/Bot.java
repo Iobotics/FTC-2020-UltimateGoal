@@ -53,8 +53,8 @@ public class Bot {
         leftMotorBack = map.get(DcMotor.class, "left-motor-back");
         rightMotorBack = map.get(DcMotor.class, "right-motor-back");
         intake = map.get(DcMotor.class, "intake");
-        shooterRight = map.get(DcMotor.class, "fly-wheel-right");
-        shooterLeft = map.get(DcMotor.class, "fly-wheel-left");
+        shooterRight = map.get(DcMotor.class, "shooter-right");
+        shooterLeft = map.get(DcMotor.class, "shooter-left");
 
         shooterRight.setDirection(DcMotorSimple.Direction.REVERSE);
         leftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
