@@ -14,20 +14,14 @@ public class TeleOp extends LinearOpMode {
                 if(gamepad1.a) {
                     bot.setIntake(1);
                 }
-                else if(gamepad1.b) {
-                   bot.setIntake(-1);
-                }
                 else {
                     bot.setIntake(0);
                 }
-                if(gamepad1.x) {
-                    bot.setLift(0.25);
-                }
-                else if(gamepad1.y) {
-                    bot.setLift(-0.25);
+                if(gamepad1.b) {
+                    bot.setFlyWheel(1);
                 }
                 else {
-                    bot.setLift(0);
+                    bot.setFlyWheel(0);
                 }
         }
 

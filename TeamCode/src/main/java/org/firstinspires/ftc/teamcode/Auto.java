@@ -12,7 +12,6 @@ public class Auto extends LinearOpMode {
 
         waitForStart();
 
-        bot.encoderDrive(1,10,10,20);
-        bot.gyroTurn(90, 0.2);
+        bot.encoderDrive(1,10,10,3);
     }
 }

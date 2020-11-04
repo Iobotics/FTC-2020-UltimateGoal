@@ -20,10 +20,9 @@ public class Bot {
     private DcMotor rightMotor;
     private DcMotor leftMotorBack;
     private DcMotor rightMotorBack;
-    private DcMotor intakeRight;
-    private DcMotor intakeLeft;
-    private DcMotor liftRight;
-    private DcMotor liftLeft;
+    private DcMotor intake;
+    private DcMotor shooterRight;
+    private DcMotor shooterLeft;
     final static int ENCODER_TICKS_PER_REV = 1120;
 
     //TODO Gear ratio
@@ -53,12 +52,11 @@ public class Bot {
         rightMotor = map.get(DcMotor.class, "right-motor");
         leftMotorBack = map.get(DcMotor.class, "left-motor-back");
         rightMotorBack = map.get(DcMotor.class, "right-motor-back");
-        intakeLeft = map.get(DcMotor.class, "intake-right");
-        intakeRight= map.get(DcMotor.class, "intake-left");
-        liftRight = map.get(DcMotor.class, "lift-right");
-        liftLeft = map.get(DcMotor.class, "lift-left");
-        liftRight.setDirection(DcMotorSimple.Direction.REVERSE);
-        intakeRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        intake = map.get(DcMotor.class, "intake");
+        shooterRight = map.get(DcMotor.class, "fly-wheel-right");
+        shooterLeft = map.get(DcMotor.class, "fly-wheel-left");
+
+        shooterRight.setDirection(DcMotorSimple.Direction.REVERSE);
         leftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         leftMotorBack.setDirection(DcMotorSimple.Direction.REVERSE);
 
@@ -81,12 +79,11 @@ public class Bot {
         rightMotorBack.setPower(right);
     }
     public void setIntake(double power) {
-        intakeLeft.setPower(power);
-        intakeRight.setPower(power);
+        intake.setPower(power);
     }
-    public void setLift(double power2) {
-        liftLeft.setPower(power2);
-        liftRight.setPower(power2);
+    public void setFlyWheel(double power) {
+        shooterRight.setPower(power);
+        shooterLeft.setPower(power);
     }
 
     public void encoderDrive(double speed,
