@@ -16,13 +16,13 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 
 public class Bot {
     private LinearOpMode opMode;
-    private DcMotor leftMotor;
-    private DcMotor rightMotor;
-    private DcMotor leftMotorBack;
-    private DcMotor rightMotorBack;
-    private DcMotor intake;
-    private DcMotor shooterRight;
-    private DcMotor shooterLeft;
+    private DcMotor leftMotor; //Port: 2.2
+    private DcMotor rightMotor; //Port: 2.0
+    private DcMotor leftMotorBack; //Port: 2.3
+    private DcMotor rightMotorBack; //Port: 2.1
+    private DcMotor intake; //Port:
+    private DcMotor shooterRight; //Port:
+    private DcMotor shooterLeft; //Port:
     final static int ENCODER_TICKS_PER_REV = 1120;
 
     //TODO Gear ratio
@@ -81,7 +81,7 @@ public class Bot {
     public void setIntake(double power) {
         intake.setPower(power);
     }
-    public void setFlyWheel(double power) {
+    public void setShooter(double power) {
         shooterRight.setPower(power);
         shooterLeft.setPower(power);
     }

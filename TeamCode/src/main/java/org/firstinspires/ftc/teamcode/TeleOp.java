@@ -18,10 +18,10 @@ public class TeleOp extends LinearOpMode {
                     bot.setIntake(0);
                 }
                 if(gamepad1.right_bumper) {
-                    bot.setFlyWheel(1);
+                    bot.setShooter(1);
                 }
                 else {
-                    bot.setFlyWheel(0);
+                    bot.setShooter(0);
                 }
         }
 
