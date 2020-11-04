@@ -36,7 +36,6 @@ public class Bot {
     private Orientation angles = null;
     private Acceleration gravity = null;
 
-
     public Bot(LinearOpMode opMode) {
         this.opMode = opMode;
         init(opMode.hardwareMap);

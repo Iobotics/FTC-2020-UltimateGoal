@@ -1,4 +1,4 @@
- package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
@@ -7,7 +7,6 @@ public class TeleOp extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         Bot bot = new Bot(this);
-
         waitForStart();
 
         int intakeVal = 0;
@@ -43,7 +42,6 @@ public class TeleOp extends LinearOpMode {
                     bot.setUpRamp(0);
                 }
             }
-
         }
     }
 }

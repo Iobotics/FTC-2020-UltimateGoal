@@ -1,4 +1,4 @@
- package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -11,8 +11,8 @@ public class Auto extends LinearOpMode {
 
         waitForStart();
 
-        bot.encoderDrive(0.5,20,20,5);
-        bot.gyroTurn(90,0.25);
+        bot.encoderDrive(0.5, 20, 20, 5);
+        bot.gyroTurn(90, 0.25);
         //bot.setDriveTrain(1, -1);
         //sleep(500);
         bot.setDriveTrain(0, 0);
