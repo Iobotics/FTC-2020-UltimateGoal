@@ -12,6 +12,10 @@ public class Auto extends LinearOpMode {
 
         waitForStart();
 
-        bot.encoderDrive(1,10,10,3);
+        // encoderDrive ex: bot.encoderDrive(1,10,10,3);
+        bot.setIntake(1);
+        bot.encoderDrive(0.75, 83, 83, 5);
+        bot.setIntake(0);
+
     }
 }

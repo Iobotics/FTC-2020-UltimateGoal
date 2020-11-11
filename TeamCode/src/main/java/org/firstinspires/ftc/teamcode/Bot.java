@@ -20,9 +20,9 @@ public class Bot {
     private DcMotor rightMotor; //Port: 2.0
     private DcMotor leftMotorBack; //Port: 2.3
     private DcMotor rightMotorBack; //Port: 2.1
-    private DcMotor intake; //Port:
-    private DcMotor shooterRight; //Port:
-    private DcMotor shooterLeft; //Port:
+    private DcMotor intake; //Port: 1.2
+    private DcMotor shooterRight; //Port: 1.0
+    private DcMotor shooterLeft; //Port: 1.1
     final static int ENCODER_TICKS_PER_REV = 1120;
 
     //TODO Gear ratio
@@ -56,7 +56,7 @@ public class Bot {
         shooterRight = map.get(DcMotor.class, "shooter-right");
         shooterLeft = map.get(DcMotor.class, "shooter-left");
 
-        shooterRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        shooterLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         leftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         leftMotorBack.setDirection(DcMotorSimple.Direction.REVERSE);
 
