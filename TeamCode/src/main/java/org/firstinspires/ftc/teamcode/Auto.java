@@ -16,6 +16,7 @@ public class Auto extends LinearOpMode {
         bot.gyroTurn(90, 0.25);
         //bot.setDriveTrain(1, -1);
         //sleep(500);
+        //Test
         bot.setDriveTrain(0, 0);
     }
 }
