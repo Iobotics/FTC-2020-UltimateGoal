@@ -13,6 +13,13 @@ public class Bot {
     private DcMotor backLeft;
     private DcMotor backRight;
 
+    private DcMotor intake;
+
+    private DcMotor shooterLeft;
+    private DcMotor shooterRight;
+
+    private DcMotor ramp;
+
     //All of the motors
 
     public Bot(HardwareMap hwMap) {
@@ -26,6 +33,15 @@ public class Bot {
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         //Reverses the wheels
 
+        intake = hwMap.get(DcMotor.class,"intake-left");
+        //defines the intakes
+        
+        shooterLeft = hwMap.get(DcMotor.class,"shooter-left");
+        shooterRight = hwMap.get(DcMotor.class,"shooter-right");
+        //defines the shooters
+        shooterRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        //reverses the left shooter
+
     }
 
     public void setDrive(double left,double right){
@@ -35,6 +51,28 @@ public class Bot {
         backLeft.setPower(left);
         backRight.setPower(right);
         //sets the power of the motors
+
+    }
+
+    public void setIntake(double power){
+
+        intake.setPower(power);
+        //sets power to intake
+
+    }
+
+    public void setShooter(double power){
+
+        shooterLeft.setPower(power);
+        shooterRight.setPower(power);
+        //sets power to the shooter
+
+    }
+
+    public void setRamp(double power){
+
+        ramp.setPower(power);
+        //sets power to ramp
 
     }
 
