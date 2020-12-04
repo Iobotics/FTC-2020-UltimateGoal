@@ -70,5 +70,3 @@ public class Bot {
         rightShooter.setPower(power);
     }
 }
-
-
