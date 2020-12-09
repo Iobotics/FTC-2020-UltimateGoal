@@ -33,11 +33,26 @@ public class TeleOp extends LinearOpMode {
 
              */
 
-            if (gamepad1.a) {
+            /*if (gamepad1.a) {
                 bot.setLift(0.75);
             } else if (gamepad1.b) {
                 bot.setLift(-0.75);
             } else bot.setLift(0);
+            */
+
+            if (gamepad1.a) {
+                bot.setGrabbingServo(bot.getGrabbingServoPos() + 0.05);
+            }
+            else if (gamepad1.b) {
+                bot.setGrabbingServo(bot.getGrabbingServoPos() - 0.05);
+            }
+
+            if (gamepad1.x) {
+                bot.setMovingServo(bot.getMovingServoPos() + 0.05);
+            }
+            else if (gamepad1.y) {
+                bot.setMovingServo(bot.getMovingServoPos() - 0.05);
+            }
 
             bot.setShooter(gamepad1.right_trigger > 0.2 ? 1 : 0);
         }
