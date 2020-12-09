@@ -70,3 +70,8 @@ public class Bot {
         rightShooter.setPower(power);
     }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of d7b5df4... Fix Merge Conflict
