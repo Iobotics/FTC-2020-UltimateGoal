@@ -56,6 +56,7 @@ public class TeleOp extends LinearOpMode {
             }
 */
             bot.setShooter(gamepad1.right_trigger > 0.2 ? 1 : 0);
+            bot.setShooter(gamepad1.left_trigger > 0.2 ? (gamepad1.left_trigger - 0.2) * ((1 - 0.7) / (1 - 0.2)) + 0.7 : 0);
         }
     }
 }
