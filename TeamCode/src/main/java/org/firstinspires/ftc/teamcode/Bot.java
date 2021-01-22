@@ -24,11 +24,9 @@ public class Bot {
     private DcMotor backLeftMotor;
     private DcMotor backRightMotor;
 
-    private DcMotor leftIntake;
-    private DcMotor rightIntake;
+    private DcMotor intake;
 
-    private DcMotor leftLiftMotor;
-    private DcMotor rightLiftMotor;
+    private DcMotor liftMotor;
 
     private DcMotor leftShooter;
     private DcMotor rightShooter;
@@ -59,25 +57,21 @@ public class Bot {
         backLeftMotor = map.get(DcMotor.class, "back-left");
         backRightMotor = map.get(DcMotor.class, "back-right");
 
-        leftIntake = map.get(DcMotor.class, "left-intake");
-        rightIntake = map.get(DcMotor.class, "right-intake");
-
-        leftLiftMotor = map.get(DcMotor.class, "left-lift");
-        rightLiftMotor = map.get(DcMotor.class, "right-lift");
+        intake = map.get(DcMotor.class, "intake");
+        // rightIntake = map.get(DcMotor.class, "right-intake");
 
         leftShooter = map.get(DcMotor.class, "left-shooter");
         rightShooter = map.get(DcMotor.class, "right-shooter");
 
-        movingServo = map.get(Servo.class, "moving-servo");
-        grabbingServo = map.get(Servo.class, "grabbing-servo");
+        // movingServo = map.get(Servo.class, "moving-servo");
+        // grabbingServo = map.get(Servo.class, "grabbing-servo");
 
         imu = map.get(BNO055IMU.class, "imu");
 
         frontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightShooter.setDirection(DcMotorSimple.Direction.REVERSE);
         backLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        leftIntake.setDirection(DcMotorSimple.Direction.REVERSE);
-        leftLiftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        rightLiftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        intake.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     public void setDrive(double left, double right) {
@@ -88,19 +82,16 @@ public class Bot {
     }
 
     public void setIntake(double power) {
-        leftIntake.setPower(power);
-        rightIntake.setPower(power);
+        intake.setPower(power);
     }
 
-    public void setLift(double power) {
-        leftLiftMotor.setPower(power);
-        rightLiftMotor.setPower(power);
-    }
+
 
     public void setShooter(double power) {
         leftShooter.setPower(power);
         rightShooter.setPower(power);
     }
+    /*
 
     public void setMovingServo(double position) {
         movingServo.setPosition(position);
@@ -118,6 +109,7 @@ public class Bot {
         return grabbingServo.getPosition();
     }
 
+*/
     public void encoderDrive(double speed,
                              double leftInches, double rightInches,
                              double timeoutS) throws InterruptedException {

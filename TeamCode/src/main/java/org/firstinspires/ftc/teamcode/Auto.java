@@ -31,7 +31,7 @@ public class Auto extends LinearOpMode {
 
         Bot bot = new Bot(this);
 
-        bot.setMovingServo(0.3);
+        // bot.setMovingServo(0.3);
 
         bot.encoderDrive(0.5, 20, 20, 10);
 

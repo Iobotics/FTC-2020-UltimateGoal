@@ -13,6 +13,7 @@ public class TeleOp extends LinearOpMode {
         while (opModeIsActive()) {
             bot.setDrive(-gamepad1.left_stick_y, -gamepad1.right_stick_y);
 
+            /*
             if (gamepad1.left_bumper && intakeStatus != 1) {
                 intakeStatus = 1;
             } else if ((gamepad1.left_bumper && intakeStatus == 1) || (gamepad1.right_bumper && intakeStatus == -1)) {
@@ -22,7 +23,7 @@ public class TeleOp extends LinearOpMode {
             }
 
             bot.setIntake(intakeStatus);
-            /*
+             */
             if (gamepad1.left_bumper) {
                 bot.setIntake(1);
             }
@@ -31,7 +32,7 @@ public class TeleOp extends LinearOpMode {
             }
             else bot.setIntake(0);
 
-             */
+
 
             /*if (gamepad1.a) {
                 bot.setLift(0.75);
@@ -39,7 +40,7 @@ public class TeleOp extends LinearOpMode {
                 bot.setLift(-0.75);
             } else bot.setLift(0);
             */
-
+/*
             if (gamepad1.a) {
                 bot.setGrabbingServo(bot.getGrabbingServoPos() + 0.05);
             }
@@ -53,7 +54,7 @@ public class TeleOp extends LinearOpMode {
             else if (gamepad1.y) {
                 bot.setMovingServo(bot.getMovingServoPos() - 0.05);
             }
-
+*/
             bot.setShooter(gamepad1.right_trigger > 0.2 ? 1 : 0);
         }
     }
